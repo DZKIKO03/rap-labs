@@ -1,123 +1,144 @@
 # 📘 Course & Schedule RAP Project
 
-Complete SAP RAP (ABAP RESTful Application Programming Model) exercise demonstrating:
+Complete hands-on project built using the **SAP ABAP RESTful Application Programming Model (RAP)**.
 
-- Domain model based on UUID
-- Composition (1:N) between Course → Schedule
-- Interface View (ZI)
-- Projection View (ZC)
-- UI Annotations (Fiori Elements)
-- OData V2 Service Exposure
-- Fiori preview for List Report & Object Page
+This example demonstrates:
+
+- Domain model based on UUID keys  
+- Composition (1:N) — Course → Schedule  
+- Interface Views (ZI)  
+- Projection Views (ZC)  
+- Full UI annotations for Fiori Elements  
+- Service exposure via **OData V2**  
+- Fiori Elements List Report & Object Page preview  
 
 ---
 
 ## 🚀 Architecture Overview
 
-### **Database Tables**
+### **Database Tables (DB Layer)**
 Located in `/db`:
-- `zcourse_sap_rap` – Course master data
-- `zcourse_sched` – Course schedule (child entity)
+
+| Table | Purpose |
+|-------|---------|
+| `zcourse_sap_rap` | Course master data |
+| `zcourse_sched` | Schedule (child entity) |
 
 Relationship:
-Course (1) --- (N) Schedule
 
-yaml
-Copia codice
+Course (1) ──── (N) Schedule
 
 ---
 
 ## 📂 Project Structure
-
 course-schedule-rap/
 │
-├── db/ # SQL and CDS tables
-├── cds/ # Interface and projection CDS (ZI/ZC)
-├── service/ # RAP service exposure
+├── db/ # Tables (CDS DDL sources)
+├── cds/ # Interface & Projection CDS (ZI/ZC)
+├── service/ # RAP Service Definition & Binding
 ├── annotations/ # UI.Annotations for Fiori Elements
-├── docs/ # Documentation (Word files)
-└── screenshots/ # Fiori preview images
+├── docs/ # Word documentation
+└── screenshots/ # Fiori preview PNGs
 
-markdown
-Copia codice
 
 ---
 
 ## 🧩 RAP Layers Used
 
-### **1. Interface Views (ZI)**
-- Define the domain model
-- Add associations
-- Include composition
-- Expose semantic information (currency, amount, timestamps)
+### **1. Interface Views – ZI\_***
+The canonical domain model:
+- Composition definition  
+- Associations (Country, Currency)  
+- Semantic annotations:  
+  - `@Semantics.amount.currencyCode`
+  - `@Semantics.systemDateTime.localInstanceLastChangedAt`
 
-### **2. Projection Views (ZC)**
-- UI-facing model
-- Search annotations
-- Value helps
-- Redirection of associations
-- Field selection for UI
+### **2. Projection Views – ZC\_***
+Frontend-facing model:
+- Search annotations  
+- Value help definitions  
+- UI redirection for compositions  
+- Field exposure for Fiori Elements  
 
 ### **3. UI Annotations**
-Located in `annotations/`:
-- Facets (Object Page structure)
-- LineItems (List Report table)
-- Identification (Object Page fields)
-- HeaderInfo (title/subtitle)
-- PresentationVariant (default sort)
+Located in `/annotations`:
+- `@UI.headerInfo`  
+- `@UI.facet`  
+- `@UI.lineItem`  
+- `@UI.identification`  
+- `@UI.presentationVariant`  
 
-### **4. Service Exposure**
+These generate automatically:
+- List Report page  
+- Object Page  
+- Navigation between Course → Schedule  
+
+### **4. Service Layer**
 `ZUI_COURSE_SAP` exposes:
-- Courses
-- Schedules
+
+- Course (ZC_COURSE_SAP_RAP)
+- Schedule (ZC_COURSE_SCHED)
 - I_Country
 - I_Currency
 
-Service binding: **OData V2**  
-Used automatically by Fiori Elements preview.
+Service Binding: **OData V2 – UI**
+
+This produces the Fiori Elements preview.
 
 ---
 
 ## 📸 Screenshots
 
-Place your preview images here:
-screenshots/
-fiori-list-report.png
-fiori-course-objectpage.png
-fiori-schedule-objectpage.png
-service-binding.png
+Screenshots located in `/screenshots`:
 
-yaml
-Copia codice
+- `list_courses.png`
+- `list_schedules.png`
+- `object_course.png`
+- `object_schedule.png`
+- `service_binding.png`
+
+These illustrate:
+- List Report of Courses  
+- List Report of Schedules  
+- Object Page of Course  
+- Object Page of Schedule  
+- Service Binding & Metadata  
+
+---
+
+## 📚 Documentation (in /docs)
+
+- **Riassunto lezione**  
+- **Spiegazione annotazioni & projection**  
+- **Metadata UI + spiegazione OData V2/V4/WebAPI**  
+
+Perfect for:
+- Studying RAP architecture  
+- Reviewing CDS layers  
+- Preparing for SAP certifications  
+- Interview prep for ABAP Cloud & RAP  
 
 ---
 
 ## 🎯 Purpose of This Project
 
-This project is designed as a learning and reference template for:
+This repository serves as a **reference template** to understand RAP end-to-end:
 
-- Understanding RAP end-to-end  
-- Building parent/child models with composition  
-- Implementing full UI metadata  
-- Preparing for SAP BTP ABAP Developer certification  
-- Training for technical interviews  
-
----
-
-## 📚 Documentation
-
-In the `/docs` folder:
-- Lesson summary  
-- Explanation of annotations  
-- Metadata UI documentation  
-- OData V2 / V4 comparison  
+- DB → ZI → ZC → UI → Service Binding  
+- Composition modeling  
+- Semantic annotations  
+- Fiori Elements auto-generation  
+- OData V2 usage within RAP  
 
 ---
 
 ## ✔️ Status
-Project **completed** and ready as a learning template.
+
+Project **completed** ✔  
+Ready as reusable template for future RAP exercises.
 
 ---
 
 ## 🔧 Author
-Training repository for SAP BTP ABAP/RAP development path.
+Training repository for SAP BTP ABAP & RAP development path.
+
