@@ -140,5 +140,5 @@ Ready as reusable template for future RAP exercises.
 ---
 
 ## 🔧 Author
-Training repository for SAP BTP ABAP & RAP development path.
+Daniele Zambrano — SAP Technical Architect.
 
