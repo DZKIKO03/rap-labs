@@ -1,0 +1,31 @@
+@EndUserText.label : 'Draft Database Table for ZTRAVEL_TAB_D'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_ANY
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table ztravel_tab_d {
+
+  key mandt          : mandt not null;
+  key travelid       : /dmo/travel_id not null;
+  agencyid           : /dmo/agency_id;
+  customerid         : /dmo/customer_id;
+  begindate          : /dmo/begin_date;
+  enddate            : /dmo/end_date;
+  @Semantics.amount.currencyCode : 'ztravel_tab_d.currencycode'
+  bookingfee         : /dmo/booking_fee;
+  @Semantics.amount.currencyCode : 'ztravel_tab_d.currencycode'
+  totalprice         : /dmo/total_price;
+  currencycode       : /dmo/currency_code;
+  description        : /dmo/description;
+  overallstatus      : /dmo/overall_status;
+  attachment         : /dmo/attachment;
+  mimetype           : /dmo/mime_type;
+  filename           : /dmo/filename;
+  createdby          : abp_creation_user;
+  createdat          : abp_creation_tstmpl;
+  locallastchangedby : abp_locinst_lastchange_user;
+  locallastchangedat : abp_locinst_lastchange_tstmpl;
+  lastchangedat      : abp_lastchange_tstmpl;
+  "%admin"           : include sych_bdl_draft_admin_inc;
+
+}
