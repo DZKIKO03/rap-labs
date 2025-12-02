@@ -1,6 +1,6 @@
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Projection View forBooking'
-define view entity ZRAP110_I_BookingTP_00B
+define view entity ZRAP110_I_BookingTP_00B 
   as projection on ZRAP110_R_BOOKINGTP_00B as Booking
 {
   key TravelID,
