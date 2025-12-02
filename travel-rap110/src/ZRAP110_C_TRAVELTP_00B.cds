@@ -4,7 +4,7 @@
 @ObjectModel.semanticKey: [ 'TravelID' ]
 @Search.searchable: true
 define root view entity ZRAP110_C_TRAVELTP_00B
-  provider contract transactional_query
+  provider contract transactional_query 
   as projection on ZRAP110_R_TRAVELTP_00B
 {
           @Search.defaultSearchElement: true
