@@ -2,7 +2,7 @@
 @Metadata.allowExtensions: true
 @EndUserText.label: 'Projection View forBooking'
 @ObjectModel.semanticKey: [ 'BookingID' ]
-@Search.searchable: true
+@Search.searchable: true 
 define view entity ZRAP110_C_BOOKINGTP_00B
   as projection on ZRAP110_R_BOOKINGTP_00B
 {
