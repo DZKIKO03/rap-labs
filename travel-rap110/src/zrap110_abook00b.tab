@@ -1,0 +1,22 @@
+@EndUserText.label : ' Table for entity ZRAP110_R_BOOKINGTP_00B'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #NOT_ALLOWED
+define table zrap110_abook00b {
+
+  key mandt             : abap.clnt not null;
+  key travel_id         : /dmo/travel_id not null;
+  key booking_id        : /dmo/booking_id not null;
+  booking_date          : /dmo/booking_date;
+  customer_id           : /dmo/customer_id;
+  carrier_id            : /dmo/carrier_id;
+  connection_id         : /dmo/connection_id;
+  flight_date           : /dmo/flight_date;
+  booking_status        : /dmo/booking_status;
+  @Semantics.amount.currencyCode : 'zrap110_abook00b.currency_code'
+  flight_price          : /dmo/flight_price;
+  currency_code         : /dmo/currency_code;
+  local_last_changed_at : abp_locinst_lastchange_tstmpl;
+
+}
