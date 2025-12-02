@@ -1,0 +1,33 @@
+interface;
+use draft;
+define behavior for ZRAP110_I_TravelTP_00B alias Travel
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action acceptTravel;
+  use action rejectTravel;
+  use action createTravel;
+
+  use action checkDates;
+
+  use association _Booking { create; with draft; }
+
+}
+
+define behavior for ZRAP110_I_BookingTP_00B alias Booking
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+
+}
