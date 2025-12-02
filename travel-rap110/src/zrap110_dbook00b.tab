@@ -1,0 +1,25 @@
+@EndUserText.label : ' Draft table for entity ZRAP110_R_BOOKINGTP_00B'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_ANY
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zrap110_dbook00b {
+
+  key mandt          : mandt not null;
+  key travelid       : /dmo/travel_id not null;
+  key bookingid      : /dmo/booking_id not null;
+  key draftuuid      : sdraft_uuid not null;
+  parentdraftuuid    : sdraft_uuid;
+  bookingdate        : /dmo/booking_date;
+  customerid         : /dmo/customer_id;
+  carrierid          : /dmo/carrier_id;
+  connectionid       : /dmo/connection_id;
+  flightdate         : /dmo/flight_date;
+  bookingstatus      : /dmo/booking_status;
+  @Semantics.amount.currencyCode : 'zrap110_dbook00b.currencycode'
+  flightprice        : /dmo/flight_price;
+  currencycode       : /dmo/currency_code;
+  locallastchangedat : abp_locinst_lastchange_tstmpl;
+  "%admin"           : include sych_bdl_draft_admin_inc;
+
+}
