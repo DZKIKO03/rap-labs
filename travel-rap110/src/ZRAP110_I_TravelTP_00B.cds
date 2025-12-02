@@ -4,7 +4,7 @@ define root view entity ZRAP110_I_TravelTP_00B
   provider contract TRANSACTIONAL_INTERFACE
   as projection on ZRAP110_R_TRAVELTP_00B as Travel
 {
-  key TravelID,
+  key TravelID, 
   AgencyID,
   CustomerID,
   BeginDate,
