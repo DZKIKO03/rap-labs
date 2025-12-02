@@ -1,0 +1,8 @@
+{
+  "CustomerID": "000001",
+  "AgencyID": "070001",
+  "BeginDate": "2025-01-01",
+  "EndDate": "2025-01-10",
+  "CurrencyCode": "EUR",
+  "Description": "Sample Travel"
+}
