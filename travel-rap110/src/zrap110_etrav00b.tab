@@ -1,0 +1,17 @@
+@EndUserText.label : 'Travel data'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zrap110_etrav00b {
+
+  key client     : abap.clnt not null;
+  key uuid       : sysuuid_x16 not null;
+  travel_id      : /dmo/travel_id not null;
+  agency_id      : /dmo/agency_id;
+  customer_id    : /dmo/customer_id;
+  event_name     : /dmo/description;
+  overall_status : /dmo/overall_status;
+  created_at     : abap.utclong;
+
+}
