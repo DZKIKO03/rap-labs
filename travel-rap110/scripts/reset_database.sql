@@ -1,0 +1,11 @@
+-- Script: reset_database.sql
+-- Purpose: Clean up Travel/Booking/Event tables for fresh testing
+
+DELETE FROM ZRAP110_ATRAV00B;
+DELETE FROM ZRAP110_ABOOK00B;
+DELETE FROM ZRAP110_ETRAV00B;
+
+DELETE FROM ZRAP110_DTRAV00B;
+DELETE FROM ZRAP110_DBOOK00B;
+
+COMMIT;
