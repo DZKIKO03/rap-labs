@@ -1,0 +1,22 @@
+Table: ZEQUIPMENT
+Description: Equipment master data
+
+Key fields:
+- CLIENT
+- EQUI_ID
+
+Main fields:
+- DESCRIPTION (CHAR 60)
+- CATEGORY (ZCATEG_DE)
+- SERIAL_NUMB (NUMC 10)
+- LOCATION (CHAR 60)
+- IS_ACTIVE (BOOLEAN)
+
+Administrative fields:
+- CREATED_BY
+- CREATED_AT
+- LOCAL_LAST_CHANGED_BY
+- LOCAL_LAST_CHANGED_AT
+
+Used as:
+- Persistent table for Equipment RAP BO
