@@ -1,0 +1,17 @@
+Domain: ZPRIOR_DOMAIN
+Type: CHAR(1)
+
+Fixed values:
+- L : Low
+- M : Medium
+- H : High
+
+Semantic meaning:
+Defines the priority level of a maintenance order.
+The priority influences execution urgency and can be used
+to control validations, feature control, or UI behavior.
+
+Used in:
+- Table ZORDER_MAN (field PRIORITY)
+- Data Element ZPRIOR_DE
+- Maintenance Order RAP Business Object
