@@ -1,123 +1,222 @@
-# RAP Project – Overview
+# RAP Labs – ABAP Cloud & RESTful ABAP Programming Model
 
-This repository contains a RAP (RESTful ABAP Programming Model) application built on SAP BTP ABAP Environment.  
-The project follows clean-core principles and implements a complete end-to-end scenario using CDS, behaviors, business logic, and service exposure.
+This repository contains a collection of projects and exercises based on the
+**RESTful ABAP Programming Model (RAP)**, developed in the **SAP BTP ABAP Environment**.
+
+The goal of this repository is to consolidate RAP concepts through
+hands-on implementations, following **Clean Core** and **ABAP Cloud** principles,
+and to serve as a long-term reference for real-world RAP development.
 
 ---
 
-## 1. Project Architecture
+## Scope of the Repository
 
-The solution is based on the standard RAP layered architecture:
+This repository covers the full RAP stack, including:
+
+- CDS-based data modeling
+- Managed RAP scenarios
+- Behavior definitions and implementations
+- Validations, determinations, and actions
+- Draft-enabled transactional processing
+- Feature control driven by business rules
+- OData V2 / OData V4 service exposure
+- Fiori Elements consumption
+
+Projects range from learning-oriented exercises (RAP100 / RAP110)
+to complete, interview-ready RAP applications.
+
+---
+
+## Projects
+
+### Equipment Maintenance – Managed RAP Application
+
+**Path:** `Z_EQUI_MAN/`
+
+A complete RAP managed application implementing a real-world scenario:
+
+- Root / child composition (Equipment → Maintenance Orders)
+- Managed RAP with **strict mode level 2**
+- **Draft-enabled** transactional handling
+- Business-rule-driven **feature control**
+- Actions controlling lifecycle transitions
+- Determinations and validations
+- Late numbering for business keys
+- OData **V4** service exposure
+- Fiori Elements List Report / Object Page UI
+
+This project is intended as a **reference implementation**
+for managed RAP applications and technical interviews.
+
+---
+
+## Project Architecture (General)
+
+All projects in this repository follow the standard RAP layered architecture:
 
 - **Data Model Layer**
-  - CDS entities
-  - CDS views and projections
+  - CDS entities and projections
   - Associations and value helps
   - Semantic annotations
 
 - **Behavior Layer**
-  - Behavior Definitions (BDEF)
-  - Behavior Implementations (Class LHC\*)
-  - Determinations, validations, actions
-  - Authorization (if applicable)
+  - Behavior definitions (BDEF)
+  - Behavior implementation classes
+  - Actions, determinations, validations
+  - Feature control and draft handling
 
 - **Service Layer**
-  - Service Definition
-  - Service Binding (OData V2/V4 or UI)
-  - Draft handling (if enabled)
+  - Service definitions
+  - Service bindings (OData V2 / V4)
 
 - **UI Layer**
-  - Fiori Elements app (optional)
+  - Fiori Elements (when applicable)
   - Local annotations
 
 ---
 
-## 2. Technical Scope
+## Repository Structure
 
-This repository demonstrates how to implement a complete RAP solution including:
+Each project inside this repository follows a consistent structure:
 
-- Creation of CDS data model  
-- Definition of projection views  
-- Behavior definitions with business logic  
-- Validation and determination examples  
-- Automated key generation (if required)  
-- Draft handling  
-- Exposure via OData service  
-- UI generation via Fiori Elements  
+# RAP Labs – ABAP Cloud & RESTful ABAP Programming Model
 
----
+This repository contains a collection of projects and exercises based on the
+**RESTful ABAP Programming Model (RAP)**, developed in the **SAP BTP ABAP Environment**.
 
-## 3. Repository Structure
-
-/data-model
-*.ddls -- CDS entities and projections
-/behavior
-*.bdef -- Behavior definitions
-*.clas.abap -- Behavior implementations
-/service
-*.srv -- Service definitions
-*.binding -- Service bindings
-/ui (optional)
-*.xml, *.json, manifests
-/docs
-architecture.md
-decisions.md
-
+The goal of this repository is to consolidate RAP concepts through
+hands-on implementations, following **Clean Core** and **ABAP Cloud** principles,
+and to serve as a long-term reference for real-world RAP development.
 
 ---
 
-## 4. Prerequisites
+## Scope of the Repository
 
-- SAP BTP ABAP Environment (Steampunk, Embedded Steampunk, or Trial)  
-- ABAP Development Tools (ADT)  
-- OData V2/V4 knowledge  
-- Basic understanding of RAP concepts  
+This repository covers the full RAP stack, including:
 
----
+- CDS-based data modeling
+- Managed RAP scenarios
+- Behavior definitions and implementations
+- Validations, determinations, and actions
+- Draft-enabled transactional processing
+- Feature control driven by business rules
+- OData V2 / OData V4 service exposure
+- Fiori Elements consumption
 
-## 5. How to Run the Project
-
-1. Import the repository into your ADT workspace.  
-2. Activate all CDS, Behavior, and Service objects.  
-3. Open the **Service Binding** and publish the OData service.  
-4. Test the service using:
-   - ADT Service Explorer  
-   - SAP API Business Hub Sandbox  
-   - Fiori Elements preview  
+Projects range from learning-oriented exercises (RAP100 / RAP110)
+to complete, interview-ready RAP applications.
 
 ---
 
-## 6. Development Guidelines
+## Projects
 
-- Follow clean-core principles.  
-- Keep business logic inside behavior implementation classes.  
-- Avoid modifying generated artifacts.  
-- Use meaningful naming conventions.  
-- Document key design decisions inside `/docs`.
+### Equipment Maintenance – Managed RAP Application
 
----
+**Path:** `Z_EQUI_MAN/`
 
-## 7. Testing
+A complete RAP managed application implementing a real-world scenario:
 
-This project can be tested using:
+- Root / child composition (Equipment → Maintenance Orders)
+- Managed RAP with **strict mode level 2**
+- **Draft-enabled** transactional handling
+- Business-rule-driven **feature control**
+- Actions controlling lifecycle transitions
+- Determinations and validations
+- Late numbering for business keys
+- OData **V4** service exposure
+- Fiori Elements List Report / Object Page UI
 
-- **ADT Preview** for OData  
-- **Fiori Elements Preview**  
-- Local unit tests (if implemented)  
-
----
-
-## 8. Future Enhancements
-
-- Add more validations and determinations  
-- Extend associations and value helps  
-- Add custom actions  
-- Implement draft-enabled UI  
-- Integrate with other RAP services  
+This project is intended as a **reference implementation**
+for managed RAP applications and technical interviews.
 
 ---
 
-## 9. License
+## Project Architecture (General)
 
-This project is provided under the MIT License unless stated otherwise.
+All projects in this repository follow the standard RAP layered architecture:
 
+- **Data Model Layer**
+  - CDS entities and projections
+  - Associations and value helps
+  - Semantic annotations
+
+- **Behavior Layer**
+  - Behavior definitions (BDEF)
+  - Behavior implementation classes
+  - Actions, determinations, validations
+  - Feature control and draft handling
+
+- **Service Layer**
+  - Service definitions
+  - Service bindings (OData V2 / V4)
+
+- **UI Layer**
+  - Fiori Elements (when applicable)
+  - Local annotations
+
+---
+
+## Repository Structure
+
+Each project inside this repository follows a consistent structure:
+<project>/
+├── src/abap/ # RAP source artifacts (CDS, behavior, classes, DDIC)
+├── docs/ # Architecture, business rules, technical decisions
+├── rap-model/ # Conceptual RAP model documentation
+└── screenshots/ # Runtime evidence (UI, draft, actions, feature control)
+
+
+
+This separation keeps **source code**, **conceptual documentation**, and
+**runtime evidence** clearly isolated.
+
+---
+
+## Prerequisites
+
+- SAP BTP ABAP Environment (Steampunk / Embedded Steampunk / Trial)
+- ABAP Development Tools (ADT)
+- Basic knowledge of:
+  - CDS
+  - RAP concepts
+  - OData (V2 / V4)
+
+---
+
+## How to Use the Projects
+
+1. Import the repository into ADT.
+2. Navigate to the desired project folder.
+3. Activate CDS, behavior, and service artifacts.
+4. Publish the service binding.
+5. Test the service via:
+   - ADT Service Explorer
+   - Fiori Elements Preview
+
+Refer to the project-specific `README.md` and `docs/` folder for details.
+
+---
+
+## Development Guidelines
+
+- Follow **Clean Core** principles.
+- Keep business logic inside RAP behavior implementations.
+- Avoid modifying framework-generated artifacts.
+- Prefer explicit lifecycle control over implicit behavior.
+- Document architectural and technical decisions in `/docs`.
+
+---
+
+## Purpose
+
+This repository is designed to:
+- Consolidate RAP knowledge through real implementations
+- Provide reusable reference projects
+- Support technical interview preparation
+- Serve as a long-term ABAP Cloud learning archive
+
+---
+
+## License
+
+This repository is provided under the MIT License unless stated otherwise.
