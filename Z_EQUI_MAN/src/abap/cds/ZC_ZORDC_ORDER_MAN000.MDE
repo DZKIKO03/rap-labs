@@ -1,0 +1,87 @@
+//" Core UI metadata layer
+@Metadata.layer: #CORE
+
+//" Object page header configuration
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'OrderID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'OrderID'
+
+//" UI annotations for Order projection
+annotate view ZORDC_ORDER_MAN000 with
+{
+  @EndUserText.label: 'OrderID'
+
+//" Facet defining main identification section
+  @UI.facet: [
+    {
+      label: 'General Information',
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE
+    }
+  ]
+
+//" Line item actions bound to Order lifecycle
+  @UI.lineItem: [
+    { position: 10, importance: #HIGH },
+    { type: #FOR_ACTION, dataAction: 'releaseOrder',   label: 'Release order' },
+    { type: #FOR_ACTION, dataAction: 'completedOrder', label: 'Complete order' },
+    { type: #FOR_ACTION, dataAction: 'cancelledOrder', label: 'Cancel order' }
+  ]
+
+  @UI.selectionField: [ { position: 10 } ]
+  OrderID;
+
+  @EndUserText.label: 'EquipmentID'
+
+  @UI.selectionField: [ { position: 20 } ]
+  EquipmentID;
+
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Priority;
+
+  @EndUserText.label: 'Status'
+
+  @UI.lineItem: [ { position: 40, label: 'Status' } ]
+  @UI.selectionField: [ { position: 40 } ]
+  Status;
+
+  @EndUserText.label: 'ReportedBy'
+
+//" Business contact information
+  @UI.identification: [ { position: 50, label: 'ReportedBy' } ]
+  @UI.lineItem:       [ { position: 50, label: 'ReportedBy' } ]
+  @UI.selectionField: [ { position: 50 } ]
+  ReportedBy;
+
+  @EndUserText.label: 'Description'
+
+//" Order description shown in list and object page
+  @UI.identification: [ { position: 60, label: 'Description' } ]
+  @UI.lineItem:       [ { position: 60, label: 'Description' } ]
+  @UI.selectionField: [ { position: 60 } ]
+  Description;
+
+  @EndUserText.label: 'Creation date'
+
+//" Order creation timestamp
+  @UI.lineItem:       [ { position: 70 } ]
+  @UI.selectionField: [ { position: 70 } ]
+  CreationDate;
+
+  @EndUserText.label: 'Completion date'
+
+//" Order completion timestamp
+  @UI.lineItem:       [ { position: 80 } ]
+  @UI.selectionField: [ { position: 80 } ]
+  CompletionDate;
+
+  @EndUserText.label: '_BaseEntity'
+
+//" Technical association kept for navigation and debugging
+  @UI.identification: [ { position: 130, label: '_BaseEntity' } ]
+  _BaseEntity;
+}
