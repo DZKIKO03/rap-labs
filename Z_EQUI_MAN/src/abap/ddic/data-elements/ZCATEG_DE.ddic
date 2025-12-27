@@ -1,0 +1,13 @@
+Data Element: ZCATEG_DE
+Domain: ZCATEG_DOMAIN
+
+Semantic meaning:
+Defines the category of an equipment.
+The category is used to classify equipment by technical domain
+(electrical, mechanical, digital, HVAC, safety) and can be used
+to drive validations, UI behavior, or reporting logic.
+
+Used in:
+- Table ZEQUIPMENT (field CATEGORY)
+- Equipment RAP Business Object
+- CDS views for Equipment
