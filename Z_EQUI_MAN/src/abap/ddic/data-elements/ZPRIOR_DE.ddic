@@ -1,0 +1,9 @@
+Data Element: ZPRIOR_DE
+Domain: ZPRIOR_DOMAIN
+
+Semantic meaning:
+Priority of the maintenance order.
+
+Used in:
+- Table ZORDER_MAN (field PRIORITY)
+- CDS views for Maintenance Order
