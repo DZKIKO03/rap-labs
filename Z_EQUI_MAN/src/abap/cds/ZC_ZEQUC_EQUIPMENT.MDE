@@ -1,0 +1,80 @@
+//" Core UI metadata layer
+@Metadata.layer: #CORE
+
+//" Object page header configuration
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'EquiID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'EquiID'
+
+//" UI annotations for Equipment projection
+annotate view ZEQUC_EQUIPMENT with
+{
+  @EndUserText.label: 'ID'
+
+//" Facets definition for object page layout
+  @UI.facet: [
+    {
+      label: 'General Information',
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE
+    },
+    {
+      id: 'idLineitem',
+      type: #LINEITEM_REFERENCE,
+      label: 'Order',
+      position: 20,
+      targetElement: '_ORDER'
+    }
+  ]
+  EquiID;
+
+  @EndUserText.label: 'Description'
+
+//" Main descriptive field exposed in list and object page
+  @UI.identification: [ { position: 20, label: 'Description' } ]
+  @UI.lineItem:       [ { position: 20, label: 'Description' } ]
+  @UI.selectionField: [ { position: 20 } ]
+  Description;
+
+  @EndUserText.label: 'Category'
+
+//" Category selection with text arrangement
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem:       [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  @UI.textArrangement: #TEXT_LAST
+  Category;
+
+  @EndUserText.label: 'Serial Number'
+
+//" Technical identifier shown for reference
+  @UI.identification: [ { position: 40, label: 'SerialNumb' } ]
+  @UI.lineItem:       [ { position: 40, label: 'SerialNumb' } ]
+  @UI.selectionField: [ { position: 40 } ]
+  SerialNumb;
+
+  @EndUserText.label: 'Location'
+
+//" Physical location information
+  @UI.identification: [ { position: 50, label: 'Location' } ]
+  @UI.lineItem:       [ { position: 50, label: 'Location' } ]
+  @UI.selectionField: [ { position: 50 } ]
+  Location;
+
+  @EndUserText.label: 'Is Active'
+
+//" Lifecycle control flag
+  @UI.identification: [ { position: 60, label: 'IsActive' } ]
+  @UI.lineItem:       [ { position: 60, label: 'IsActive' } ]
+  @UI.selectionField: [ { position: 60 } ]
+  IsActive;
+
+  @EndUserText.label: '_BaseEntity'
+
+//" Technical association kept for navigation and debugging
+  @UI.identification: [ { position: 70, label: '_BaseEntity' } ]
+  _BaseEntity;
+}
