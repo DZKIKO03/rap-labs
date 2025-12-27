@@ -1,0 +1,13 @@
+Domain: ZCATEG_DOMAIN
+Type: CHAR(4)
+
+Fixed values:
+- ELEC : Electrical Equipment
+- MECH : Mechanical Equipment
+- DIG  : IT / Digital Equipment
+- HVAC : HVAC Equipment
+- SEQU : Safety Equipment
+
+Used in:
+- Table ZEQUIPMENT (field CATEGORY)
+- Data Element ZCATEG_DE
