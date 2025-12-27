@@ -1,0 +1,28 @@
+Table: ZORDER_MAN
+Description: Maintenance Order persistent table
+
+Key fields:
+- CLIENT
+- ORDER_ID
+
+Foreign keys / relationships:
+- EQUIPMENT_ID -> ZEQUIPMENT-EQUI_ID
+
+Business fields:
+- PRIORITY (ZPRIOR_DE)
+- STATUS (CHAR 10)
+- REPORTED_BY (CHAR 40)
+- DESCRIPTION (CHAR 60)
+- CREATION_DATE (TIMESTAMP)
+- COMPLETION_DATE (TIMESTAMP)
+
+Administrative fields:
+- CREATED_BY
+- CREATED_AT
+- LOCAL_LAST_CHANGED_BY
+- LOCAL_LAST_CHANGED_AT
+
+Usage:
+- Persistent storage for the Maintenance Order RAP Business Object
+- Supports draft-enabled managed RAP scenario
+- Status field is controlled by RAP actions and validations
