@@ -1,0 +1,23 @@
+@EndUserText.label : 'Department'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table z017depment {
+
+  key client           : abap.clnt not null;
+  key id               : z017_department_id not null;
+  description          : /lrn/depment_description;
+  @AbapCatalog.foreignKey.screenCheck : false
+  department_head      : z017_depment_head
+    with foreign key [0..1,0..1] z017employ
+      where client = z017depment.client
+        and employee_id = z017depment.department_head;
+  @AbapCatalog.foreignKey.screenCheck : false
+  department_assistant : z017_depment_assistant
+    with foreign key [0..1,1] z017employ
+      where client = z017depment.client
+        and employee_id = z017depment.department_assistant;
+  include /lrn/s_admin;
+
+}
