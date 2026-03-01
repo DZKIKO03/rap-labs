@@ -1,0 +1,25 @@
+@EndUserText.label : 'Tabella employ'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_CHARACTER_NUMERIC
+@AbapCatalog.enhancement.fieldSuffix : 'ZEM'
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table z017employ {
+
+  key client      : abap.clnt not null;
+  key employee_id : z017_employee_id not null;
+  first_name      : /dmo/first_name;
+  last_name       : /dmo/last_name;
+  birth_date      : z017_birth_date;
+  entry_date      : z017_entry_date;
+  @AbapCatalog.foreignKey.screenCheck : false
+  department_id   : z017_department_id
+    with foreign key [0..*,1] z017depment
+      where client = z017employ.client
+        and id = z017employ.department_id;
+  @Semantics.amount.currencyCode : 'z017employ.currency_code'
+  annual_salary   : z017_annual_salary;
+  currency_code   : waers;
+  include /lrn/s_admin;
+
+}
