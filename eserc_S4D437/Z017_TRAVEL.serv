@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition'
+define service Z017_TRAVEL {
+  expose Z017_C_Travel;
+  expose Z017_C_TravelItem;
+}
