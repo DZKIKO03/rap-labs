@@ -1,0 +1,23 @@
+@EndUserText.label : 'Flight Travel Item'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_CHARACTER_NUMERIC
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #ALLOWED
+define table z017_tritem {
+
+  key client           : abap.clnt not null;
+  key item_uuid        : /lrn/tritem_uuid not null;
+  agency_id            : /dmo/agency_id;
+  travel_id            : /dmo/travel_id;
+  carrier_id           : /dmo/carrier_id;
+  connection_id        : /dmo/connection_id;
+  flight_date          : /dmo/flight_date;
+  booking_id           : /dmo/booking_id;
+  passenger_first_name : /dmo/first_name;
+  passenger_last_name  : /dmo/last_name;
+  changed_at           : abp_lastchange_tstmpl;
+  changed_by           : abp_lastchange_user;
+  loc_changed_at       : abp_locinst_lastchange_tstmpl;
+  include z017_s_ext_tritem;
+
+}
