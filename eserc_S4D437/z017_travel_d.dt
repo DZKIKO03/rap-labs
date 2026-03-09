@@ -1,0 +1,22 @@
+@EndUserText.label : 'Draft table for entity Z017_R_TRAVEL'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_ANY
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table z017_travel_d {
+
+  key mandt    : mandt not null;
+  key agencyid : /dmo/agency_id not null;
+  key travelid : /dmo/travel_id not null;
+  description  : /dmo/description;
+  customerid   : /dmo/customer_id;
+  begindate    : /dmo/begin_date;
+  enddate      : /dmo/end_date;
+  duration     : abap.int4;
+  status       : /dmo/travel_status;
+  changedat    : abp_lastchange_tstmpl;
+  changedby    : abp_lastchange_user;
+  locchangedat : abp_locinst_lastchange_tstmpl;
+  "%admin"     : include sych_bdl_draft_admin_inc;
+
+}
