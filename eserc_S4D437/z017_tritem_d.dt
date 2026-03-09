@@ -1,0 +1,24 @@
+@EndUserText.label : 'Draft table for entity Z017_R_TRAVELITEM'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_ANY
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table z017_tritem_d {
+
+  key mandt          : mandt not null;
+  key itemuuid       : /lrn/tritem_uuid not null;
+  agencyid           : /dmo/agency_id;
+  travelid           : /dmo/travel_id;
+  carrierid          : /dmo/carrier_id;
+  connectionid       : /dmo/connection_id;
+  flightdate         : /dmo/flight_date;
+  bookingid          : /dmo/booking_id;
+  passengerfirstname : /dmo/first_name;
+  passengerlastname  : /dmo/last_name;
+  changedat          : abp_lastchange_tstmpl;
+  changedby          : abp_lastchange_user;
+  locchangedat       : abp_locinst_lastchange_tstmpl;
+  "%admin"           : include sych_bdl_draft_admin_inc;
+  include z017_s_ext_tritem;
+
+}
